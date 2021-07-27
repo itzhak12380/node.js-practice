@@ -44,6 +44,14 @@ async function deletFunc(req,res){
     await putfunc.save()
     res.send("yes")
 }
+function getParamsTest(req, res) {
+    try {
+      res.send(`hello there${req.params.fname}`);
+      console.log("data sent succesfully");
+    } catch (error) {
+      res.send({ error: error, massage: "bad request" });
+    }
+  }
 module.exports = {
     getTest,
     postTest,
